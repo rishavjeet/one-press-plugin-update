@@ -1,0 +1,14 @@
+{
+  "name": "one-press-plugin-update",
+  "version": "1.0.0",
+  "description": "This repo is for testing the workflow for the plugin update / maintenance in the one-press framework.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.3"
+  }
+}
