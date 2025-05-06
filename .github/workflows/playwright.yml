@@ -41,10 +41,8 @@ jobs:
           path: playwright-report/
           retention-days: 30
 
-      - name: Set up GitHub CLI
-        uses: cli/gh-action@v2
       - name: Create PR from develop to main if tests passed
         run: |
-          gh pr create --base main --head test-branch-name --title "Auto PR: Tests Passed" --body "This PR was automatically created after successful tests."
+          gh pr create --base main --head ${{ github.ref_name }} --title "Auto PR: Tests Passed" --body "This PR was automatically created after successful tests."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
