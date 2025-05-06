@@ -38,13 +38,7 @@ jobs:
           retention-days: 30
 
       - name: Create PR from develop to main if tests passed
-        if: success()
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Auto PR: Promote develop to main"
-          title: "Auto PR: Promote develop to main"
-          body: |
-            This PR was automatically created after Playwright tests passed on the `develop` branch.
-          base: main
-          branch: develop
+        run: |
+          gh pr create --base main --head test-branch-name --title "Auto PR: Tests Passed" --body "This PR was automatically created after successful tests."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
