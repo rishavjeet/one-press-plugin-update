@@ -5,6 +5,10 @@ on:
     branches:
       - develop  # Only run when changes are pushed to develop (e.g. merged PR)
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   test-and-pr:
     name: Run Playwright Tests and Create PR to main
@@ -41,4 +45,4 @@ jobs:
         run: |
           gh pr create --base main --head test-branch-name --title "Auto PR: Tests Passed" --body "This PR was automatically created after successful tests."
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
