@@ -41,4 +41,4 @@ jobs:
         run: |
           gh pr create --base main --head test-branch-name --title "Auto PR: Tests Passed" --body "This PR was automatically created after successful tests."
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
