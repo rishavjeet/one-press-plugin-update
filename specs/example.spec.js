@@ -1,6 +1,7 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
+// Test to check the title of the page
 test('has title tests', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
